@@ -1,0 +1,35 @@
+{
+  "port": 80,
+  "saveInterval": 1000,
+  "randomIdSaturationRatio": 0.6,
+  "noteIdBlacklist": [
+    "api",
+    "admin",
+    "vendor",
+    "theme",
+    "style",
+    "app",
+    "empty",
+    "markdown",
+    "markdown-view"
+  ],
+  "emptyNoteRetentionDays": 30,
+  "illegalNoteRetentionDays": 365,
+  "activityLogRetentionDays": 180,
+  "trustProxy": false,
+  "adminPath": "/manage-your-secret-path",
+  "adminEntryToken": "",
+  "universalEditToken": "",
+  "admin": {
+    "username": "admin",
+    "passwordHash": ""
+  },
+  "mysql": {
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "",
+    "database": "noteweb",
+    "connectionLimit": 20
+  }
+}

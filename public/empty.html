@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    <link rel="stylesheet" href="/theme.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background: var(--color-bg-editor);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .empty {
+            text-align: center;
+            color: var(--color-text-placeholder);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .empty p {
+            font-style: italic;
+            font-size: 16px;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <main class="empty">
+        <p>这篇笔记没有内容</p>
+        <p>This note is empty</p>
+    </main>
+</body>
+</html>

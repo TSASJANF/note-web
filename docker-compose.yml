@@ -1,0 +1,38 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: note-web-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-noteweb_root_pass}
+      MYSQL_DATABASE: noteweb
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  note-web:
+    build: .
+    container_name: note-web
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "80:80"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=${MYSQL_ROOT_PASSWORD:-noteweb_root_pass}
+      - MYSQL_DATABASE=noteweb
+    volumes:
+      - ./config.json:/app/config.json
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
