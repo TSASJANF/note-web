@@ -1,4 +1,4 @@
-# Note Web - 开发者文档
+# Note Web
 
 ## 目录
 
